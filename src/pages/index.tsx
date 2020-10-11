@@ -1,20 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
-
-import RocketseatLogo from '../assets/rocketseat.svg'
 
 import { Container } from '../styles/pages/Home'
 
 const Home: React.FC = () => {
+  const [text, setText] = useState('')
+
   return (
     <Container>
       <Head>
-        <title>Homepage</title>
+        <title>Emoji Translator</title>
       </Head>
 
-      <RocketseatLogo />
-      <h1>ReactJS Structure</h1>
-      <p>A ReactJS + Next.js structure made by Rocketseat.</p>
+      <header>
+        <h1>✨ Emoji Translator ✨</h1>
+        <h3>Text a frase and I will translate for u</h3>
+      </header>
+
+      <main>
+        <div>
+          <label htmlFor="text">Text:</label>
+          <input
+            type="text"
+            id="text"
+            value={text}
+            onChange={({ target }) => setText(target.value)}
+            placeholder="ex: smiley face"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="emoji">Emoji: (click to copy)</label>
+          <input
+            type="emoji"
+            value={text}
+            id="emoji"
+            readOnly={true}
+            placeholder="😃"
+          />
+        </div>
+      </main>
     </Container>
   )
 }

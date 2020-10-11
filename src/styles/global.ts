@@ -7,9 +7,13 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    font-size: 60%;
+  }
+
   body {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
-    font: 400 16px Roboto, sans-serif;
+    font: 400 1.6rem Poppins, Roboto, sans-serif;
   }
 `
