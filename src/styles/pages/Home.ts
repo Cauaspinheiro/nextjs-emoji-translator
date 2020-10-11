@@ -75,6 +75,8 @@ export const Container = styled.div<IContainerProps>`
         color: #f0f0f0;
 
         outline: none;
+
+        transition: 0.3s border-color;
       }
 
       input[type='emoji'] {

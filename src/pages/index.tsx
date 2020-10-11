@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
+import emojis from '../assets/emoji.json'
 
 import { Container } from '../styles/pages/Home'
 
@@ -33,10 +34,17 @@ const Home: React.FC = () => {
           <label htmlFor="emoji">Emoji: (click to copy)</label>
           <input
             type="emoji"
-            value={text}
+            value={
+              emojis.find(emoji => {
+                if (text === emoji.name) {
+                  console.log(text)
+                  return true
+                }
+              })?.char || 'Emoji not found 🤔😳'
+            }
             id="emoji"
             readOnly={true}
-            placeholder="😃"
+            onClick={() => document.execCommand('copy')}
           />
         </div>
       </main>
