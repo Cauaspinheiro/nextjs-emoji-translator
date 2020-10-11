@@ -1,6 +1,11 @@
 import styled from 'styled-components'
+import { Theme } from '../styled'
 
-export const Container = styled.div`
+export interface IContainerProps {
+  theme: Theme
+}
+
+export const Container = styled.div<IContainerProps>`
   width: 100vw;
   height: 100vh;
 
